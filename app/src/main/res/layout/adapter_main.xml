@@ -30,10 +30,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textViewDetail"
+        android:layout_marginBottom="8dp"
         app:layout_constraintStart_toStartOf="@id/textViewHeader"
-        app:layout_constraintTop_toBottomOf="@id/textViewHeader"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewView"
         android:layout_marginTop="8dp"/>
 
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_delete"
+        android:id="@+id/imageViewDelete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textViewHeader"
+        app:layout_constraintBottom_toBottomOf="@id/textViewHeader"/>
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/ic_make_copy"
+        app:layout_constraintEnd_toEndOf="@id/imageViewDelete"
+        app:layout_constraintStart_toStartOf="@id/imageViewDelete"
+        app:layout_constraintTop_toTopOf="@id/textViewDetail"
+        app:layout_constraintBottom_toBottomOf="@id/textViewDetail"/>
 
 
 
