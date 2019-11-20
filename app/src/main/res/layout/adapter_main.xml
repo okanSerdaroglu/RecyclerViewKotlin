@@ -50,6 +50,7 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:src="@drawable/ic_make_copy"
+        android:id="@+id/imageViewCopy"
         app:layout_constraintEnd_toEndOf="@id/imageViewDelete"
         app:layout_constraintStart_toStartOf="@id/imageViewDelete"
         app:layout_constraintTop_toTopOf="@id/textViewDetail"
