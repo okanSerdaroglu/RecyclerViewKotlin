@@ -2,6 +2,10 @@ package com.okanserdaroglu.recyclerviewkotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +21,42 @@ class MainActivity : AppCompatActivity() {
         val adapter = ViewAdapter(allViews)
         recyclerViewAllViews.adapter = adapter
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+        menuInflater.inflate(R.menu.main_menu,menu)
+
+        return super.onCreateOptionsMenu(menu)
+
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+
+        var id  = item?.itemId
+
+
+
+        when (id) {
+            R.id.horizontal -> {
+                var linearLayoutManager = LinearLayoutManager (this,LinearLayoutManager.HORIZONTAL,false)
+                recyclerViewAllViews.layoutManager = linearLayoutManager
+            }
+
+            R.id.grid -> {
+                var gridLayoutManager = GridLayoutManager (this,2)
+                recyclerViewAllViews.layoutManager = gridLayoutManager
+            }
+
+            R.id.vertical -> {
+                var linearLayoutManager = LinearLayoutManager (this,LinearLayoutManager.VERTICAL,false)
+                recyclerViewAllViews.layoutManager = linearLayoutManager
+            }
+
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
     private fun prepareData () : ArrayList<View> {
